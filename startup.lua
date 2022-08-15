@@ -14,7 +14,7 @@ local function getFileFromURL(file)
   if content == nil then
       error("Critical error, could not download "..PROGRAM.." from repo!")
   end
-  return decode64(content)
+  return content
 end
 
 local function saveFile(path, content)
