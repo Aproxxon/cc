@@ -29,7 +29,11 @@ end
 if(not fs.exists("/setup.conf")) then
   print("Creating Config")
   
-  local h = fs.open("/setup.conf", "w")
+  print("What program do you want to setup")
+  local prog = read()
+  print("what arguments")
+  local ar = read()
+  saveFile("setup.conf",prog.."\n"..ar)
   
   print("done")
 end
