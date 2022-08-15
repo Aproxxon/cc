@@ -38,3 +38,4 @@ if(not fs.exists("/setup.conf")) then
   print("done")
 end
 
+os.reboot()
