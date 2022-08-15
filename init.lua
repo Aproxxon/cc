@@ -20,11 +20,12 @@ local function saveFile(path, content)
   f.close()
 end
 
-if(!fs.exists("/setup.conf")) then
+if(!fs.exists("/startup.lua")) then
   print("Downloading Startup")
   saveFile("/startup.lua", getFileFromURL("https://raw.githubusercontent.com/azukaar/cc/main/startup.lua"))
   print("done")
 end
+
 if(!fs.exists("/setup.conf")) then
   print("Creating Config")
   
