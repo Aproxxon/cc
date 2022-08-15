@@ -26,7 +26,7 @@ if(!fs.exists("/startup.lua")) then
   print("done")
 end
 
-if(!fs.exists("/setup.conf")) then
+if(not fs.exists("/setup.conf")) then
   print("Creating Config")
   
   local h = fs.open("/setup.conf", "w")
