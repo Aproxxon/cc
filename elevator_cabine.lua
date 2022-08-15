@@ -71,12 +71,12 @@ while(true) do
 
       modem.transmit(98,98,tonumber(nf))
       
+      monitor.setCursorPos(1, 17 - oldy)
+      monitor.write(tostring(oldy))
       monitor.setTextColor( colors.red )
       monitor.setCursorPos(1, y)
       monitor.write(tostring(nf))
       monitor.setTextColor( colors.white )
-      monitor.setCursorPos(1, 17 - oldy)
-      monitor.write(tostring(oldy))
       oldy = nf
     end
 
@@ -86,12 +86,12 @@ while(true) do
 
       if(tonumber(chan) == 98) then
         local y = 17 - message
+        monitor.setCursorPos(1, 17 - oldy)
+        monitor.write(tostring(oldy))
         monitor.setTextColor( colors.red )
         monitor.setCursorPos(1, y)
         monitor.write(tostring(message))
         monitor.setTextColor( colors.white )
-        monitor.setCursorPos(1, 17 - oldy)
-        monitor.write(tostring(oldy))
         oldy = message
       end
       
