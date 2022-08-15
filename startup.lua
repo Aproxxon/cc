@@ -23,4 +23,4 @@ end
 print("Updating Startup_2.lua")
 saveFile("/startup_2.lua", getFileFromURL("https://raw.githubusercontent.com/azukaar/cc/main/startup_2.lua"))
 
-os.run({}, "/startup_2.lua")
+os.run({shell = shell, multishell = multishell}, "/startup_2.lua")
