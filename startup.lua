@@ -8,8 +8,7 @@ local function getFileFromURL(file)
   --    ["Authorization"] = "token "..GITHUB_ACCESS_TOKEN,
   })
   if res == nil then return nil end
-  local body = textutils.unserialiseJSON(res.readAll())
-  local content = body["content"]
+  local content = res.readAll()
   res.close()
   
   if content == nil then
