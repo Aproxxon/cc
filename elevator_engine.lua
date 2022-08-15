@@ -36,14 +36,14 @@ while true do
       if(destination < floor) then
         print("going down")
         redstone.setOutput("back", false)
-        redstone.setOutput("right", false)
+        --redstone.setOutput("right", false)
         sleep(0.1)
         redstone.setOutput("right", true)
       end
       if(destination > floor) then
         print("going up")
         redstone.setOutput("back", false)
-        redstone.setOutput("right", true)
+        --redstone.setOutput("right", true)
         sleep(0.1)
         redstone.setOutput("right", false)
       end
