@@ -20,7 +20,7 @@ local function saveFile(path, content)
   f.close()
 end
 
-if(!fs.exists("/startup.lua")) then
+if(not fs.exists("/startup.lua")) then
   print("Downloading Startup")
   saveFile("/startup.lua", getFileFromURL("https://azukaar.github.io/cc/startup.lua"))
   print("done")
