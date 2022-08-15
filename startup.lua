@@ -25,16 +25,18 @@ local function saveFile(path, content)
   f.close()
 end
 
-print("Updating... "..program)
 
-url = "https://raw.githubusercontent.com/azukaar/cc/main/"..program..".lua"
 
+print("Updating Startup.lua")
 saveFile("/startup.lua", getFileFromURL("https://raw.githubusercontent.com/azukaar/cc/main/startup.lua"))
+
+print("Updating "..program)
+url = "https://raw.githubusercontent.com/azukaar/cc/main/"..program..".lua"
 saveFile("/"..program..".lua", getFileFromURL(url))
 
 print("Starting "..program.." "..argP)
 
-multishell.launch({}, program, argP)
+multishell.launch({}, "/"..program..".lua", argP)
 
 local modem = peripheral.find("modem")
 modem.open(1)
