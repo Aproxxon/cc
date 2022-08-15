@@ -1,6 +1,6 @@
 local h = fs.open("/setup.conf", "r")
 local program = h.readLine()
-local argP = h.readLine()
+local argP = h.readLine() or ""
 
 local function getFileFromURL(file)
   local res = http.get(file, {
