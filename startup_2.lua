@@ -25,7 +25,7 @@ local function saveFile(path, content)
 end
 
 print("Updating "..program)
-url = "https://raw.githubusercontent.com/azukaar/cc/main/"..program..".lua"
+url = "https://azukaar.github.io/cc/"..program..".lua"
 saveFile("/"..program..".lua", getFileFromURL(url))
 
 print("Starting "..program.." "..argP)
