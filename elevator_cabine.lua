@@ -21,17 +21,17 @@ monitor.write("11 Yann")
 monitor.setCursorPos(1,7)
 monitor.write("10 Yann")
 monitor.setCursorPos(1,8)
-monitor.write("9 ????")
+monitor.write("9 Kar")
 monitor.setCursorPos(1,9)
-monitor.write("8 ????")
+monitor.write("8 Kar")
 monitor.setCursorPos(1,10)
-monitor.write("7 ????")
+monitor.write("7 Kar")
 monitor.setCursorPos(1,11)
-monitor.write("6 ????")
+monitor.write("6 Sev")
 monitor.setCursorPos(1,12)
-monitor.write("5 ????")
+monitor.write("5 Sev")
 monitor.setCursorPos(1,13)
-monitor.write("4 ????")
+monitor.write("4 Sev")
 monitor.setCursorPos(1,14)
 monitor.write("3 Popo")
 monitor.setCursorPos(1,15)
@@ -62,22 +62,24 @@ while(true) do
       local x = p2
       local y = p3
       local nf = 17 - y
+        
+      if(nf > -2 and nf < 13) then
+          print ("going to "..nf)
+          speaker.playSound(
+            "minecraft:entity.experience_orb.pickup",
+            1, 0.5
+          )
 
-      print ("going to "..nf)
-      speaker.playSound(
-        "minecraft:entity.experience_orb.pickup",
-        1, 0.5
-      )
+          modem.transmit(98,98,tonumber(nf))
 
-      modem.transmit(98,98,tonumber(nf))
-      
-      monitor.setCursorPos(1, 17 - oldy)
-      monitor.write(tostring(oldy))
-      monitor.setTextColor( colors.red )
-      monitor.setCursorPos(1, y)
-      monitor.write(tostring(nf))
-      monitor.setTextColor( colors.white )
-      oldy = nf
+          monitor.setCursorPos(1, 17 - oldy)
+          monitor.write(tostring(oldy))
+          monitor.setTextColor( colors.red )
+          monitor.setCursorPos(1, y)
+          monitor.write(tostring(nf))
+          monitor.setTextColor( colors.white )
+          oldy = nf
+      end
     end
 
     if(isModem) then
