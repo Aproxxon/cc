@@ -19,7 +19,10 @@ end
 
 while(true) do
   local act = reactor.getStatus()
-  local actLabel = (act) ? "Activated" : "Stopped";
+  local actLabel = "Stopped"
+  if(act) then
+    actLabel = "Activated"
+  end
   local dam = reactor.getDamagePercent()
   local cool = reactor.getHeatedCoolantFilledPercentage()
   local waste = reactor.getWasteFilledPercentage()
