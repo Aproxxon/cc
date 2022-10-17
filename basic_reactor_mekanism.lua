@@ -22,19 +22,28 @@ while(true) do
   local dam = reactor.getDamagePercent()
   local cool = reactor.getHeatedCoolantFilledPercentage()
   local waste = reactor.getWasteFilledPercentage()
+  local fuel = reactor.getFuelFilledPercentage()
+  local burn = reactor.getBurnRate()
   
   monitor.clear()
+  
   monitor.setCursorPos(1,1)
-  monitor.write("Damage: "..dam)
+  monitor.write("Status: "..(act ? "Activated" : "Stopped"))
   monitor.setCursorPos(1,2)
-  monitor.write("Coolant: "..cool)
+  monitor.write("Damage: "..dam.."%")
   monitor.setCursorPos(1,3)
-  monitor.write("Waste: "..waste)
+  monitor.write("Heat. Cool.: "..cool.."%")
   monitor.setCursorPos(1,4)
+  monitor.write("Waste: "..waste.."%")
+  monitor.setCursorPos(1,5)
+  monitor.write("Fuel: "..fuel.."%")
+  monitor.setCursorPos(1,6)
+  monitor.write("Burn Rate: "..burn.."mB / t")
+  monitor.setCursorPos(1,7)
   
   if(dam > 5) then
     if(scram()) then
-      print("Stopped because of dammages")
+      print("Stopped because of damages")
       reactor.setBurnRate(1.0)
     end
   
