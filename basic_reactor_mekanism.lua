@@ -1,4 +1,6 @@
-local reactor = peripheral.wrap("bottom")
+local reactor = peripheral.wrap("back")
+
+print(reactor)
 
 while(true) do
   local dam = reactor.getDamagePercent()
