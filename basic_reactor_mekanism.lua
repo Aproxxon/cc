@@ -35,18 +35,21 @@ while(true) do
   if(dam > 5) then
     if(scram()) then
       print("Stopped because of dammages")
+      reactor.setBurnRate(1.0)
     end
   
   
   elseif(cool > 15) then
     if(scram()) then
       print("Stopped because of coolant")
+      reactor.setBurnRate(1.0)
     end
   
   
   elseif(waste > 15) then
     if(scram()) then
       print("Stopped because of waste")
+      reactor.setBurnRate(1.0)
     end
   
   else
