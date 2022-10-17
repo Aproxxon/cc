@@ -24,9 +24,9 @@ while(true) do
     actLabel = "Activated"
   end
   local dam = reactor.getDamagePercent()
-  local cool = reactor.getHeatedCoolantFilledPercentage()
-  local waste = reactor.getWasteFilledPercentage()
-  local fuel = reactor.getFuelFilledPercentage()
+  local cool = reactor.getHeatedCoolantFilledPercentage() * 100
+  local waste = reactor.getWasteFilledPercentage() * 100
+  local fuel = reactor.getFuelFilledPercentage() * 100
   local burn = reactor.getBurnRate()
   
   monitor.clear()
