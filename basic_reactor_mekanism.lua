@@ -1,7 +1,7 @@
 local reactor = peripheral.wrap("back")
 local monitor = peripheral.find("monitor")
 
-print(reactor)
+print(reactor.getStatus())
 
 while(true) do
   local dam = reactor.getDamagePercent()
