@@ -32,7 +32,7 @@ while(true) do
     print("Stopped because of waste")
     reactor.scram()
   
-  elseif(not act)
+  elseif(not act) then
      reactor.activate()
   end
   
