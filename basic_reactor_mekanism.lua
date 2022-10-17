@@ -4,6 +4,7 @@ local monitor = peripheral.find("monitor")
 print(reactor.getStatus())
 
 while(true) do
+  local act = reactor.getStatus()
   local dam = reactor.getDamagePercent()
   local cool = reactor.getHeatedCoolantFilledPercentage()
   local waste = reactor.getWasteFilledPercentage()
@@ -17,21 +18,21 @@ while(true) do
   monitor.write("Waste: "..waste)
   monitor.setCursorPos(1,4)
   
-  if(dam > 5) then
+  if(act and dam > 5) then
     print("Stopped because of damage")
     reactor.scram()
   
   
-  elseif(cool > 15) then
+  elseif(act and cool > 15) then
     print("Stopped because of coolant")
     reactor.scram()
   
   
-  elseif(waste > 15) then
+  elseif(act and waste > 15) then
     print("Stopped because of waste")
     reactor.scram()
   
-  else
+  elseif(not act)
      reactor.activate()
   end
   
