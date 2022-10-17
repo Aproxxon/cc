@@ -1,4 +1,5 @@
 local reactor = peripheral.wrap("back")
+local monitor = peripheral.find("monitor")
 
 print(reactor)
 
