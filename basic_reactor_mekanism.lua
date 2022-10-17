@@ -19,6 +19,7 @@ end
 
 while(true) do
   local act = reactor.getStatus()
+  local actLabel = (act) ? "Activated" : "Stopped";
   local dam = reactor.getDamagePercent()
   local cool = reactor.getHeatedCoolantFilledPercentage()
   local waste = reactor.getWasteFilledPercentage()
@@ -28,7 +29,7 @@ while(true) do
   monitor.clear()
   
   monitor.setCursorPos(1,1)
-  monitor.write("Status: "..(act ? "Activated" : "Stopped"))
+  monitor.write("Status: "..actLabel)
   monitor.setCursorPos(1,2)
   monitor.write("Damage: "..dam.."%")
   monitor.setCursorPos(1,3)
