@@ -1,6 +1,6 @@
 local monitor = peripheral.wrap("top")
 local modem = peripheral.wrap("front")
-local speaker = peripheral.wrap("right")
+local speaker = peripheral.wrap("left")
 
 local args = { ... }
 local floor = args[1]
