@@ -21,6 +21,6 @@ local function saveFile(path, content)
 end
 
 print("Updating Startup_2.lua")
-saveFile("/startup_2.lua", getFileFromURL("https://azukaar.github.io/cc/startup_2.lua"))
+saveFile("/startup_2.lua", getFileFromURL("https://aproxxon.github.io/cc/startup_2.lua"))
 
 os.run({shell = shell, multishell = multishell}, "/startup_2.lua")
