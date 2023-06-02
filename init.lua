@@ -22,7 +22,7 @@ end
 
 if(not fs.exists("/startup.lua")) then
   print("Downloading Startup")
-  saveFile("/startup.lua", getFileFromURL("https://azukaar.github.io/cc/startup.lua"))
+  saveFile("/startup.lua", getFileFromURL("https://aproxxon.github.io/cc/startup.lua"))
   print("done")
 end
 
