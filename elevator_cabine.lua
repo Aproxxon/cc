@@ -41,7 +41,7 @@ monitor.write("1 Popo")
 monitor.setCursorPos(1,17)
 monitor.write("0 Lobby")
 monitor.setCursorPos(1,18)
-monitor.write("-1 Reactor")
+monitor.write("-1 Reac")
 
 modem.open(97)
 modem.open(98)
